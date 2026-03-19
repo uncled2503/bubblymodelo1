@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Star, CheckCircle, Flame, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logotipo.png";
+import gallery1 from "@/assets/products/gallery-1.png";
+import gallery2 from "@/assets/products/gallery-2.png";
+import gallery3 from "@/assets/products/gallery-3.png";
+import gallery4 from "@/assets/products/gallery-4.png";
 
 export const Hero = () => {
   const [viewers, setViewers] = useState(17);
@@ -22,6 +26,22 @@ export const Hero = () => {
         <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
           Seu filho ODEIA tomar banho? <br /> Isso vai mudar <span className="text-blue-600">HOJE</span>.
         </h1>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 max-w-4xl mx-auto">
+          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
+            <img src={gallery1} alt="Kit de Bombas de Banho" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
+            <img src={gallery2} alt="Criança feliz no banho" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
+            <img src={gallery4} alt="Bombas de banho com surpresas" className="w-full h-full object-cover" />
+          </div>
+          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
+            <img src={gallery3} alt="Caixa do produto" className="w-full h-full object-cover" />
+          </div>
+        </div>
+
         <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-6">
           Transforme o banho em diversão instantânea com uma surpresa mágica dentro de cada bomba 💥
         </p>
