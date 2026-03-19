@@ -71,11 +71,11 @@ export const Testimonials = () => {
             loop: true,
           }}
           plugins={[plugin.current]}
-          className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
+          className="w-full max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
         >
           <CarouselContent>
             {testimonials.map((t, i) => (
-              <CarouselItem key={i} className="sm:basis-1/2 lg:basis-1/3 p-4">
+              <CarouselItem key={i} className="basis-1/2 md:basis-1/3 p-4">
                 <TestimonialCard {...t} />
               </CarouselItem>
             ))}
