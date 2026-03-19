@@ -1,7 +1,7 @@
 "use client";
 
-import image1 from "@/assets/products/gallery-2.png";
-import image2 from "@/assets/products/gallery-1.png";
+import image1 from "@/assets/features/feature-1.jpg";
+import image2 from "@/assets/features/feature-2.png";
 
 const FeatureSection = ({ title, text, image, imageAlt, reverse = false }) => {
   const flexDirection = reverse ? "md:flex-row-reverse" : "md:flex-row";
