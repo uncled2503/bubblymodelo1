@@ -76,7 +76,7 @@ export const Testimonials = () => {
           >
             <CarouselContent>
               {testimonials.map((t, i) => (
-                <CarouselItem key={i} className="basis-1/2 md:basis-1/3 p-4">
+                <CarouselItem key={i} className="basis-full sm:basis-1/2 md:basis-1/3 p-4">
                   <TestimonialCard {...t} />
                 </CarouselItem>
               ))}

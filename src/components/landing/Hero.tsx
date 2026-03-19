@@ -35,11 +35,11 @@ export const Hero = () => {
           <div className="aspect-square bg-white rounded-lg shadow-lg overflow-hidden mb-4 border">
             <img src={mainImage} alt="Imagem principal do produto BubblyBuddies" className="w-full h-full object-contain p-2" />
           </div>
-          <div className="grid grid-cols-4 gap-2 md:gap-4">
+          <div className="flex gap-2 md:gap-4 overflow-x-auto pb-2 -mx-4 px-4">
             {productImages.map((image, index) => (
               <button
                 key={index}
-                className={`aspect-square bg-white rounded-md overflow-hidden border-2 transition-all duration-200 ${mainImage === image ? 'border-blue-600 ring-2 ring-blue-300' : 'border-slate-200 hover:border-blue-400'}`}
+                className={`aspect-square w-20 h-20 md:w-auto flex-shrink-0 bg-white rounded-md overflow-hidden border-2 transition-all duration-200 ${mainImage === image ? 'border-blue-600 ring-2 ring-blue-300' : 'border-slate-200 hover:border-blue-400'}`}
                 onClick={() => setMainImage(image)}
               >
                 <img src={image} alt={`Miniatura do produto ${index + 1}`} className="w-full h-full object-cover" />
