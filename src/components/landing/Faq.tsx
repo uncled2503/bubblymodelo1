@@ -18,15 +18,17 @@ export const Faq = () => {
   return (
     <section className="py-12 md:py-20 bg-blue-50">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10">Perguntas Frequentes</h2>
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`}>
-              <AccordionTrigger className="text-lg font-semibold text-left">{faq.q}</AccordionTrigger>
-              <AccordionContent className="text-base text-slate-700">{faq.a}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10" data-aos="fade-up">Perguntas Frequentes</h2>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className="text-lg font-semibold text-left">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-base text-slate-700">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

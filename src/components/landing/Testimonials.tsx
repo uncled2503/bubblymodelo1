@@ -64,25 +64,27 @@ export const Testimonials = () => {
   return (
     <section className="py-12 md:py-20 bg-blue-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10">O que os pais estão dizendo:</h2>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[plugin.current]}
-          className="w-full max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
-        >
-          <CarouselContent>
-            {testimonials.map((t, i) => (
-              <CarouselItem key={i} className="basis-1/2 md:basis-1/3 p-4">
-                <TestimonialCard {...t} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex" />
-          <CarouselNext className="hidden md:flex" />
-        </Carousel>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10" data-aos="fade-up">O que os pais estão dizendo:</h2>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[plugin.current]}
+            className="w-full max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
+          >
+            <CarouselContent>
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i} className="basis-1/2 md:basis-1/3 p-4">
+                  <TestimonialCard {...t} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
+        </div>
       </div>
     </section>
   );

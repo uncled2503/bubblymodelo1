@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
@@ -13,11 +14,20 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { FloatingButton } from "@/components/landing/FloatingButton";
 import { NotificationPopup } from "@/components/landing/NotificationPopup";
 import { DiscountModal } from "@/components/landing/DiscountModal";
-import { Waves } from "@/components/landing/Waves";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Index = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }, []);
+
   return (
-    <div className="bg-white text-slate-800 antialiased">
+    <div className="bg-white text-slate-800 antialiased overflow-x-hidden">
       <Header />
       <main className="pt-12"> {/* Padding to offset fixed header */}
         <Hero />

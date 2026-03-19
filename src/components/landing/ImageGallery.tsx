@@ -28,7 +28,7 @@ export const ImageGallery = () => {
   ];
 
   return (
-    <section className="bg-white">
+    <section className="bg-white" data-aos="fade-up">
       <div className="container mx-auto px-4 pt-12 md:pt-20">
         <Carousel
           plugins={[plugin.current]}

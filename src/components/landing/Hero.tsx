@@ -25,13 +25,13 @@ export const Hero = () => {
   return (
     <section className="w-full bg-blue-50 py-16 md:py-24 text-center">
       <div className="container mx-auto px-4">
-        <img src={logo} alt="Tika Toys Logo" className="mx-auto mb-8 w-64 md:w-80" />
-        <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
+        <img src={logo} alt="Tika Toys Logo" className="mx-auto mb-8 w-64 md:w-80" data-aos="fade-down" />
+        <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4" data-aos="fade-down" data-aos-delay="100">
           Seu filho ODEIA tomar banho? <br /> Isso vai mudar <span className="text-blue-600">HOJE</span>.
         </h1>
 
         {/* Product Image Gallery */}
-        <div className="my-8 max-w-2xl mx-auto">
+        <div className="my-8 max-w-2xl mx-auto" data-aos="zoom-in-up">
           <div className="aspect-square bg-white rounded-lg shadow-lg overflow-hidden mb-4 border">
             <img src={mainImage} alt="Imagem principal do produto BubblyBuddies" className="w-full h-full object-contain p-2" />
           </div>
@@ -48,11 +48,11 @@ export const Hero = () => {
           </div>
         </div>
 
-        <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-6">
+        <p className="text-lg md:text-xl text-slate-700 max-w-3xl mx-auto mb-6" data-aos="fade-up">
           Transforme o banho em diversão instantânea com uma surpresa mágica dentro de cada bomba 💥
         </p>
         
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="100">
           <div className="flex items-center gap-1">
             <Star className="text-yellow-400 fill-yellow-400" size={20} />
             <Star className="text-yellow-400 fill-yellow-400" size={20} />
@@ -63,13 +63,13 @@ export const Hero = () => {
           <span className="font-semibold text-slate-800">4.8 (+1.500 avaliações)</span>
         </div>
 
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-8" data-aos="fade-up" data-aos-delay="200">
             <p className="bg-green-100 text-green-800 font-bold py-2 px-4 rounded-full">
                 Mais de 3.742 pedidos só essa semana
             </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-10 text-left" data-aos="fade-up" data-aos-delay="300">
           <div className="flex items-center gap-2">
             <CheckCircle className="text-green-500" size={24} />
             <span className="font-medium text-slate-800">Crianças pedem pra tomar banho</span>
@@ -84,7 +84,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4" data-aos="fade-up" data-aos-delay="400">
           <Button size="lg" className="w-full md:w-auto h-14 text-xl font-bold bg-orange-500 hover:bg-orange-600 text-white shadow-lg animate-pulse">
             QUERO TRANSFORMAR O BANHO AGORA
           </Button>
