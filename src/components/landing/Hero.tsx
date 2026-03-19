@@ -19,6 +19,9 @@ export const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const productImages = [gallery4, gallery1, gallery2, gallery3];
+  const [mainImage, setMainImage] = useState(productImages[0]);
+
   return (
     <section className="w-full bg-blue-50 py-16 md:py-24 text-center">
       <div className="container mx-auto px-4">
@@ -27,18 +30,21 @@ export const Hero = () => {
           Seu filho ODEIA tomar banho? <br /> Isso vai mudar <span className="text-blue-600">HOJE</span>.
         </h1>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 max-w-4xl mx-auto">
-          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
-            <img src={gallery1} alt="Kit de Bombas de Banho" className="w-full h-full object-cover" />
+        {/* Product Image Gallery */}
+        <div className="my-8 max-w-2xl mx-auto">
+          <div className="aspect-square bg-white rounded-lg shadow-lg overflow-hidden mb-4 border">
+            <img src={mainImage} alt="Imagem principal do produto BubblyBuddies" className="w-full h-full object-contain p-2" />
           </div>
-          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
-            <img src={gallery2} alt="Criança feliz no banho" className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
-            <img src={gallery4} alt="Bombas de banho com surpresas" className="w-full h-full object-cover" />
-          </div>
-          <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
-            <img src={gallery3} alt="Caixa do produto" className="w-full h-full object-cover" />
+          <div className="grid grid-cols-4 gap-2 md:gap-4">
+            {productImages.map((image, index) => (
+              <button
+                key={index}
+                className={`aspect-square bg-white rounded-md overflow-hidden border-2 transition-all duration-200 ${mainImage === image ? 'border-blue-600 ring-2 ring-blue-300' : 'border-slate-200 hover:border-blue-400'}`}
+                onClick={() => setMainImage(image)}
+              >
+                <img src={image} alt={`Miniatura do produto ${index + 1}`} className="w-full h-full object-cover" />
+              </button>
+            ))}
           </div>
         </div>
 
