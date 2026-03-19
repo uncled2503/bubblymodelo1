@@ -16,7 +16,7 @@ import video3 from "@/assets/products/video3.gif";
 export const ImageGallery = () => {
   const plugin = React.useRef(
     Autoplay({
-      delay: 2500,
+      delay: 4000,
       stopOnInteraction: false,
     })
   );
@@ -40,7 +40,7 @@ export const ImageGallery = () => {
         >
           <CarouselContent>
             {gifs.map((gif, index) => (
-              <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/3 p-2">
+              <CarouselItem key={index} className="basis-1/2 md:basis-1/3 p-2">
                 <div className="aspect-square bg-slate-100 rounded-lg shadow-md overflow-hidden">
                   <img src={gif.src} alt={gif.alt} className="w-full h-full object-cover" />
                 </div>
