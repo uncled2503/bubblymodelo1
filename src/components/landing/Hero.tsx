@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Star, CheckCircle, Flame, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logotipo.png";
 
 export const Hero = () => {
   const [viewers, setViewers] = useState(17);
@@ -17,6 +18,7 @@ export const Hero = () => {
   return (
     <section className="w-full bg-blue-50 py-16 md:py-24 text-center">
       <div className="container mx-auto px-4">
+        <img src={logo} alt="Tika Toys Logo" className="mx-auto mb-8 w-64 md:w-80" />
         <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4">
           Seu filho ODEIA tomar banho? <br /> Isso vai mudar <span className="text-blue-600">HOJE</span>.
         </h1>
