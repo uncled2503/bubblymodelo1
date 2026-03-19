@@ -13,6 +13,7 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { FloatingButton } from "@/components/landing/FloatingButton";
 import { NotificationPopup } from "@/components/landing/NotificationPopup";
 import { DiscountModal } from "@/components/landing/DiscountModal";
+import { Waves } from "@/components/landing/Waves";
 
 const Index = () => {
   return (

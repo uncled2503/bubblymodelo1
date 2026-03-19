@@ -7,6 +7,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Waves } from "./Waves";
 
 import video1 from "@/assets/products/video1.gif";
 import video2 from "@/assets/products/video2.gif";
@@ -27,8 +28,8 @@ export const ImageGallery = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="bg-white">
+      <div className="container mx-auto px-4 pt-12 md:pt-20">
         <Carousel
           plugins={[plugin.current]}
           className="w-full max-w-6xl mx-auto"
@@ -48,6 +49,7 @@ export const ImageGallery = () => {
           </CarouselContent>
         </Carousel>
       </div>
+      <Waves />
     </section>
   );
 };
