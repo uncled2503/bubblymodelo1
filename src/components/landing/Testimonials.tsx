@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -9,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 // Import images
 import mulher1 from "@/assets/testimonials/mulher1.jpg";
@@ -53,6 +54,13 @@ export const Testimonials = () => {
     { name: "Gabriel T.", text: "O kit é incrível e o cheirinho é maravilhoso. O banho virou um momento de tranquilidade aqui em casa.", image: homem4 },
   ];
 
+  const plugin = React.useRef(
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+    })
+  );
+
   return (
     <section className="py-12 md:py-20 bg-blue-50">
       <div className="container mx-auto px-4">
@@ -62,12 +70,7 @@ export const Testimonials = () => {
             align: "start",
             loop: true,
           }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-              stopOnInteraction: false,
-            }),
-          ]}
+          plugins={[plugin.current]}
           className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
         >
           <CarouselContent>
