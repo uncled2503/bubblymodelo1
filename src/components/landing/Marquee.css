@@ -8,7 +8,7 @@
 
 .marquee-content {
   display: flex;
-  animation: marquee-scroll 24s linear infinite;
+  animation: marquee-scroll 17s linear infinite;
 }
 
 .marquee:hover .marquee-content {
