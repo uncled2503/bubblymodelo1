@@ -2,12 +2,30 @@
 
 import { Star } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-react";
+
+// Import images
+import mulher1 from "@/assets/testimonials/mulher1.jpg";
+import homem1 from "@/assets/testimonials/homem1.jpg";
+import mulher2 from "@/assets/testimonials/mulher2.jpg";
+import homem2 from "@/assets/testimonials/homem2.jpg";
+import mulher3 from "@/assets/testimonials/mulher3.jpg";
+import homem3 from "@/assets/testimonials/homem3.jpg";
+import mulher4 from "@/assets/testimonials/mulher4.jpg";
+import homem4 from "@/assets/testimonials/homem4.jpg";
 
 const TestimonialCard = ({ name, text, image }) => (
-  <div className="bg-white p-6 rounded-lg shadow-lg">
+  <div className="bg-white p-6 rounded-xl shadow-lg h-full flex flex-col">
     <div className="flex items-center mb-4">
-      <Avatar>
-        <AvatarImage src={image} alt={name} />
+      <Avatar className="h-12 w-12">
+        <AvatarImage src={image} alt={name} className="object-cover" />
         <AvatarFallback>{name.charAt(0)}</AvatarFallback>
       </Avatar>
       <div className="ml-4">
@@ -19,26 +37,49 @@ const TestimonialCard = ({ name, text, image }) => (
         </div>
       </div>
     </div>
-    <p className="text-slate-700">"{text}"</p>
+    <p className="text-slate-700 text-sm">"{text}"</p>
   </div>
 );
 
 export const Testimonials = () => {
   const testimonials = [
-    { name: "Juliana S.", text: "Meu filho não queria mais sair da água 😂 Finalmente paz na hora do banho, ele amou a surpresa!", image: "https://i.pravatar.cc/150?img=1" },
-    { name: "Marcos P.", text: "Produto incrível! Acabou a briga pra ir pro chuveiro. Agora ele vai correndo. Vale cada centavo!", image: "https://i.pravatar.cc/150?img=2" },
-    { name: "Carla M.", text: "Comprei sem muita fé, mas me surpreendi. A qualidade é ótima e os brinquedos são uma gracinha. Recomendo!", image: "https://i.pravatar.cc/150?img=3" },
+    { name: "Juliana S.", text: "Meu filho não queria mais sair da água 😂 Finalmente paz na hora do banho, ele amou a surpresa!", image: mulher1 },
+    { name: "Marcos P.", text: "Produto incrível! Acabou a briga pra ir pro chuveiro. Agora ele vai correndo. Vale cada centavo!", image: homem1 },
+    { name: "Carla M.", text: "Comprei sem muita fé, mas me surpreendi. A qualidade é ótima e os brinquedos são uma gracinha. Recomendo!", image: mulher2 },
+    { name: "Ricardo L.", text: "Ótima ideia para presentear. É criativo, divertido e as crianças ficam super felizes com as surpresas.", image: homem2 },
+    { name: "Sofia R.", text: "Minha sobrinha amou o presente! A caixa é linda e as bombas de banho são muito cheirosas. Sucesso total!", image: mulher3 },
+    { name: "Lucas A.", text: "Produto excelente. Não irrita a pele e deixa um cheirinho delicioso. Recomendo demais.", image: homem3 },
+    { name: "Fernanda C.", text: "Nunca pensei que diria isso, mas meu filho agora pede para tomar banho! Mágico!", image: mulher4 },
+    { name: "Gabriel T.", text: "O kit é incrível e o cheirinho é maravilhoso. O banho virou um momento de tranquilidade aqui em casa.", image: homem4 },
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 bg-blue-50">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 text-center mb-10">O que os pais estão dizendo:</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+              stopOnInteraction: false,
+            }),
+          ]}
+          className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((t, i) => (
+              <CarouselItem key={i} className="sm:basis-1/2 lg:basis-1/3 p-4">
+                <TestimonialCard {...t} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex" />
+          <CarouselNext className="hidden md:flex" />
+        </Carousel>
       </div>
     </section>
   );
