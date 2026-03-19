@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { ImageGallery } from "@/components/landing/ImageGallery";
@@ -14,6 +13,7 @@ import { FinalCta } from "@/components/landing/FinalCta";
 import { FloatingButton } from "@/components/landing/FloatingButton";
 import { NotificationPopup } from "@/components/landing/NotificationPopup";
 import { DiscountModal } from "@/components/landing/DiscountModal";
+import { Footer } from "@/components/landing/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -41,10 +41,10 @@ const Index = () => {
         <Faq />
         <FinalCta />
       </main>
+      <Footer />
       <FloatingButton />
       <NotificationPopup />
       <DiscountModal />
-      <MadeWithDyad />
     </div>
   );
 };
